@@ -1,0 +1,67 @@
+// Variabili per i colori principali
+$primary-color: #aed1e7; // Blu
+$secondary-color: #abc1b4; // Verde
+$accent-color: #28261e; // Giallo
+$text-color: #ffffff;
+$footer-bg: #3c3c3c; // Rosso
+
+// Mixin per pulsanti
+@mixin button-style {
+  padding: 10px 15px;
+  border: solid;
+  border-radius: 2px;
+  color: $text-color;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+// Stile generale
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+// Header
+header {
+  background-color: $primary-color;
+  color: $text-color;
+  padding: 20px;
+  text-align: center;
+
+  h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  nav {
+    margin-top: 10px;
+
+    .btn {
+      @include button-style;
+      background-color: $secondary-color;
+      margin: 5px;
+      
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+    }
+  }
+}
+
+// Main content
+main {
+  padding: 20px;
+}
+
+// Footer
+footer {
+  background-color: $footer-bg;
+  color: $text-color;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}

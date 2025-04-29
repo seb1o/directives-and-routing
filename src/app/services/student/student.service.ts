@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class StudentService {
 
 
-  readonly BASE_URL = "https://68109d6227f2fdac2412120c.mockapi.io/"
+  readonly BASE_URL = "https://68109dff27f2fdac2412155d.mockapi.io/"
   readonly STUDENTS_ENDPOINT = "students/"
 
   constructor(private http: HttpClient) {
