@@ -1,1 +1,29 @@
-<p>randomizer works!</p>
+<div class="randomizer-container">
+    <div class="controls">
+        <div class="group-size-selector">
+            <label for="groupSize">Group Size:</label>
+            <select id="groupSize" [(ngModel)]="groupSize" (change)="onGroupSizeChange()">
+                @for (size of availableSizes; track size) {
+                    <option [value]="size">{{size}} students</option>
+                }
+            </select>
+        </div>
+        <button class="randomize-btn" (click)="randomize()">Randomize Again</button>
+    </div>
+
+    <div class="groups-container">
+        @for (group of groups; track $index) {
+            <div class="group">
+                <h3>Group {{$index + 1}}</h3>
+                <div class="students-list">
+                    @for (student of group; track student.id) {
+                        <div class="student-card">
+                            <img [src]="student.imageUrl" [alt]="student.name + ' ' + student.surname" class="student-img">
+                            <span class="student-name">{{student.name}} {{student.surname}}</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</div>

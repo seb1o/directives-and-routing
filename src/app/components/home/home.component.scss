@@ -1,14 +1,136 @@
 .student-img{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     object-position: center center;
     border-radius: 50%;
+    border: 3px solid #f0f0f0;
 }
 
 .student-card{
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 16px;
+    gap: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.student-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    margin: 0 0 5px 0;
+}
+
+:host {
+    display: block;
+    padding: 20px;
+}
+
+div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controls-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.sorting-controls {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.sort-buttons {
+    display: flex;
+    gap: 8px;
+    background: white;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    justify-content: center;
+    width: auto;
+}
+
+.sort-btn {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    color: #666;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+
+    &:hover {
+        background: #f8f9fa;
+        border-color: #007bff;
+        color: #007bff;
+    }
+
+    &.active {
+        background: #007bff;
+        border-color: #007bff;
+        color: white;
+    }
+}
+
+.direction-btn {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    color: #666;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+
+    &:hover {
+        background: #f8f9fa;
+        border-color: #007bff;
+        color: #007bff;
+    }
+}
+
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.student-info {
+    flex: 1;
+}
+
+.student-age {
+    font-size: 0.9rem;
+    color: #666;
 }

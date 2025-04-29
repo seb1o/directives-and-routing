@@ -1,5 +1,34 @@
 @if (student) {
-    <div>
-        <h2>{{student.name}}</h2>
+    <div class="student-detail">
+        <div class="student-header">
+            <img [src]="student.imageUrl" [alt]="student.name + ' ' + student.surname" class="student-image">
+            <h1>{{student.name}} {{student.surname}}</h1>
+        </div>
+        
+        <div class="student-info">
+            <div class="info-item">
+                <span class="label">Country:</span>
+                <span class="value">{{student.country}}</span>
+            </div>
+            
+            <div class="info-item">
+                <span class="label">Date of Birth:</span>
+                <span class="value">{{student.dob}}</span>
+            </div>
+            
+            <div class="info-item">
+                <span class="label">Gender:</span>
+                <span class="value">{{student.gender}}</span>
+            </div>
+            
+            <div class="info-item">
+                <span class="label">Marks:</span>
+                <div class="marks">
+                    @for (mark of student.marks; track $index) {
+                        <span class="mark">{{mark}}</span>
+                    }
+                </div>
+            </div>
+        </div>
     </div>
 }

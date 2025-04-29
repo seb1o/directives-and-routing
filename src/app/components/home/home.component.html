@@ -1,8 +1,33 @@
-<div>
-    @for (student of students; track $index) {
-        <div class="student-card">
-            <img class="student-img" src="{{student.imageUrl}}" alt="">
-            <a [routerLink]="['/detail', student.id]" class="student-name">{{student.name}} {{student.surname}}</a>
-        </div>
-    }
+<div class="home-container">
+    <div class="sort-buttons">
+        <button 
+            class="sort-btn" 
+            [class.active]="sortBy === 'name'"
+            (click)="sortBy = 'name'; onSortChange()">
+            Name
+        </button>
+        <button 
+            class="sort-btn" 
+            [class.active]="sortBy === 'age'"
+            (click)="sortBy = 'age'; onSortChange()">
+            Age
+        </button>
+        <button 
+            class="direction-btn" 
+            (click)="toggleSortDirection()"
+            [title]="sortDirection === 'asc' ? 'Ascending' : 'Descending'">
+            {{ sortDirection === 'asc' ? '↑' : '↓' }}
+        </button>
+    </div>
+
+    <div class="students-grid">
+        @for (student of students; track $index) {
+            <a [routerLink]="['/detail', student.id]" class="student-card">
+                <img class="student-img" [src]="student.imageUrl" [alt]="student.name + ' ' + student.surname">
+                <div class="student-info">
+                    <h3 class="student-name">{{student.name}} {{student.surname}}</h3>
+                </div>
+            </a>
+        }
+    </div>
 </div>
