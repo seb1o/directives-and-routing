@@ -19,7 +19,7 @@ export class HomeComponent {
   sortDirection: 'asc' | 'desc' = 'asc';
 
   constructor() {
-    this.loadStudents();
+  
   }
 
   loadStudents() {
@@ -58,5 +58,11 @@ export class HomeComponent {
   toggleSortDirection() {
     this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
     this.sortStudents();
+  }
+
+  ngOnInit(){
+    this.loadStudents();
+    console.log('siamo dentro');
+    
   }
 }
